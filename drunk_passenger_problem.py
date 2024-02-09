@@ -8,17 +8,11 @@ def trial():
     seat_remain = [i for i in range(1,101)]
     
     for i in range(0,99) :
-        if i != 0 and seat[i] == False:
-            seat[i] = True
-            seat_remain.remove(i+1)
-        else:
-            choice = rd.choice(seat_remain)
-            seat[choice-1] = True
-            seat_remain.remove(choice)  
+        seat_num = rd.choice(seat_remain) -1 if i == 0 or seat[i] else i
+        seat[seat_num] = True
+        seat_remain.remove(seat_num + 1)
     
-    if(seat[99]):
-        return False
-    return True
+    return True if seat[99] else False
             
 def run(iter_num):
     
