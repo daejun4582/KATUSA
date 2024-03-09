@@ -66,11 +66,11 @@ void print_line(int size)
 
 void print_arrow(int size)
 {
-    for (int i = 0; i < size; i++)
+    for(int i = 0; i < size ; i++)
     {
-        for (int j = 0; j <= size * 2; j++)
+        for(int j = 0; j < size *2; j++)
         {
-            if(i == j || size * 2 - i == j)
+            if(i == j || size * 2 - i -1 == j)
                 printf("*");
             else
                 printf(" ");
